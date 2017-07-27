@@ -1,0 +1,26 @@
+Connection='wireless'
+Interface=YourInterface # ex: wlp3s0
+Security='wpa-configsection'
+Description="eduroam network"
+IP='dhcp'
+TimeoutWPA=30
+WPAConfigSection=(
+    'ssid="eduroam"'
+    'proto=WPA2'
+    'key_mgmt=WPA-EAP'
+    # EAP mechanisms
+    # Common combinations are:
+    #   PEAP + auth=MSCHAPV2
+    #   TTLS + auth=MSCHAPV2
+    #   TTLS + autheap=MSCHAPV2
+    #   TTLS + auth=PAP
+    'eap=PEAP'
+    'phase2="auth=MSCHAPV2"'
+    # Server identity
+    'ca_cert="/etc/ssl/certs/ca-certificates.crt"'
+    'domain_suffix_match="uky.edu"'
+    # Client identity
+    'anonymous_identity="anonymous@uky.edu"'
+    'identity="LinkBlueUserName@uky.edu"' # ex: xyz123@uky.edu
+    'password="YourPassword"'
+)
