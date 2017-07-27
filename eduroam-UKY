@@ -1,3 +1,4 @@
+#netctl profile for eduroam at the University of Kentucky
 Connection='wireless'
 Interface=YourInterface # ex: wlp3s0
 Security='wpa-configsection'
